@@ -1,3 +1,5 @@
+#It works by encoding the face into a 128-dimensional vector. This vector is compared with pre-encoded vectors 
+#of known faces to find a match. The closest match (based on Euclidean distance) is used to identify the person.
 import face_recognition
 import cv2
 import numpy as np
@@ -7,7 +9,7 @@ from datetime import datetime
 video_capture = cv2.VideoCapture(0)
 
 aziz_image = face_recognition.load_image_file(r"C:\Users\azizu\Desktop\Facial_Recognition\faces\aziz.jpg")
-# Converting the facial features into numerical data (128-dimensional encodings).
+
 aziz_encoding = face_recognition.face_encodings(aziz_image)[0] 
 
 sohaib_image = face_recognition.load_image_file(r"C:\Users\azizu\Desktop\Facial_Recognition\faces\sohaib.jpg")
